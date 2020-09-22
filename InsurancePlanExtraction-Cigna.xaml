@@ -13,10 +13,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>801,893</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>801,933</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InsurancePlanExtraction_Cigna_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="23">
+    <scg:List x:TypeArguments="x:String" Capacity="46">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -40,6 +40,7 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -68,16 +69,12 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="InsurancePlanExtraction_Cigna" sap:VirtualizedContainerService.HintSize="676,728" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="InsurancePlanExtraction_Cigna" sap:VirtualizedContainerService.HintSize="676,799" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DropDownDT" />
       <Variable x:TypeArguments="x:String" Name="varTextDropDown" />
       <Variable x:TypeArguments="x:String" Name="varDocCompleteName" />
-      <Variable x:TypeArguments="scg:List(x:String)" Name="varDoctorNameList">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new List(Of String)" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(Of String)]" Name="varDoctorNameList" />
       <Variable x:TypeArguments="x:Boolean" Name="varDoctorFound" />
       <Variable x:TypeArguments="sd:DataTable" Name="PlansDT" />
     </Sequence.Variables>
@@ -86,7 +83,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Flowchart DisplayName="Cigna-Processing Flow" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart DisplayName="Cigna-Processing Flow" sap:VirtualizedContainerService.HintSize="634,707" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -94,12 +91,13 @@
           <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
           <av:Size x:Key="ShapeSize">60,75</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,119.58</av:PointCollection>
+          <x:Double x:Key="Height">670.57999999999993</x:Double>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Flowchart.StartNode>
-        <x:Reference>__ReferenceID4</x:Reference>
+        <x:Reference>__ReferenceID5</x:Reference>
       </Flowchart.StartNode>
-      <FlowStep x:Name="__ReferenceID4">
+      <FlowStep x:Name="__ReferenceID5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">200,119.58</av:Point>
@@ -375,9 +373,7 @@
                                                     <InvokeMethod.TargetObject>
                                                       <InArgument x:TypeArguments="scg:List(x:String)">[varDoctorNameList]</InArgument>
                                                     </InvokeMethod.TargetObject>
-                                                    <InArgument x:TypeArguments="x:String">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(0).ToString.Trim" />
-                                                    </InArgument>
+                                                    <InArgument x:TypeArguments="x:String">[row(0).ToString.Trim]</InArgument>
                                                   </InvokeMethod>
                                                 </Sequence>
                                               </If.Then>
@@ -547,7 +543,7 @@
                                   </ui:CursorPosition>
                                 </ui:Click.CursorPosition>
                                 <ui:Click.Target>
-                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3ba1c5c6-7ed1-4e06-a5b9-4c756a5fb5a7" InformativeScreenshot="376c6826fa045b69987c37e2ada2650f" Selector="&lt;webctrl aaname=' Continue as guest ' parentid='desc7485806271526473' tag='BUTTON' type='submit' /&gt;">
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3ba1c5c6-7ed1-4e06-a5b9-4c756a5fb5a7" InformativeScreenshot="376c6826fa045b69987c37e2ada2650f" Selector="&lt;webctrl aaname=' Continue as guest ' parentid='desc*' tag='BUTTON' type='submit' /&gt;">
                                     <ui:Target.TimeoutMS>
                                       <InArgument x:TypeArguments="x:Int32" />
                                     </ui:Target.TimeoutMS>
@@ -568,47 +564,104 @@
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">200,503.58</av:Point>
                             <av:Size x:Key="ShapeSize">200,66</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">300,569.58 300,619.58</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Plans Extraction" sap:VirtualizedContainerService.HintSize="518,528" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                        <Sequence DisplayName="Plans Extraction" sap:VirtualizedContainerService.HintSize="536,1059" sap2010:WorkflowViewState.IdRef="Sequence_22">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="476,436" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                          <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="494,967" sap2010:WorkflowViewState.IdRef="Sequence_21">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'Cigna Heal Page'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="BrowserScope_6" InformativeScreenshot="d922bda004266425ae941c38c4d5cf6f" Selector="&lt;html app='chrome.exe' title='Cigna Health Care Provider Directory' /&gt;">
+                            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'Cigna Heal Page'" sap:VirtualizedContainerService.HintSize="452,875" sap2010:WorkflowViewState.IdRef="BrowserScope_6" InformativeScreenshot="d922bda004266425ae941c38c4d5cf6f" Selector="&lt;html app='chrome.exe' title='Cigna Health Care Provider Directory' /&gt;">
                               <ui:BrowserScope.Body>
                                 <ActivityAction x:TypeArguments="x:Object">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="418,729" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[PlansDT]" DisplayName="Extract Structured Data (Plans Extraction)" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Plan' attr='text'&gt;&lt;webctrl tag='div' class='plan-type ng-star-inserted'/&gt;&lt;webctrl tag='h3' class='plan-type__title' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="0" SimulateClick="True">
-                                      <ui:ExtractData.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="930da5c4-6d4d-4cf4-bdfe-6acfd31cc889" InformativeScreenshot="2776c41d58ab990188bfee14105e2cf0" Selector="&lt;webctrl css-selector='body&amp;gt;cigna-root&amp;gt;public-directory-layout&amp;gt;main&amp;gt;cigna-medical-profile-container&amp;gt;cigna-medical-profile-ui&amp;gt;cigna-profile-info&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;cigna-location-plans-accepted&amp;gt;section' tag='SECTION' /&gt;" WaitForReady="COMPLETE">
-                                          <ui:Target.TimeoutMS>
-                                            <InArgument x:TypeArguments="x:Int32" />
-                                          </ui:Target.TimeoutMS>
-                                        </ui:Target>
-                                      </ui:ExtractData.Target>
-                                    </ui:ExtractData>
+                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[PlansDT]" DisplayName="Extract Structured Data (Plans Extraction)" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Plan' attr='text'&gt;&lt;webctrl tag='div' class='plan-type ng-star-inserted'/&gt;&lt;webctrl tag='h3' class='plan-type__title' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="0" SimulateClick="True">
+                                        <ui:ExtractData.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="930da5c4-6d4d-4cf4-bdfe-6acfd31cc889" InformativeScreenshot="2776c41d58ab990188bfee14105e2cf0" Selector="&lt;webctrl css-selector='body&amp;gt;cigna-root&amp;gt;public-directory-layout&amp;gt;main&amp;gt;cigna-medical-profile-container&amp;gt;cigna-medical-profile-ui&amp;gt;cigna-profile-info&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;cigna-location-plans-accepted&amp;gt;section' tag='SECTION' /&gt;" WaitForReady="COMPLETE">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                          </ui:Target>
+                                        </ui:ExtractData.Target>
+                                      </ui:ExtractData>
+                                    </Sequence>
+                                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[PlansDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="376,299" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                                      <ui:ForEachRow.Body>
+                                        <ActivityAction x:TypeArguments="sd:DataRow">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[out_Plans]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">["Cigna: Cigna "+row(0).ToString.Trim+" | "+out_Plans]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ui:ForEachRow.Body>
+                                    </ui:ForEachRow>
+                                    <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[out_Plans]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[out_Plans.Remove(out_Plans.Count-2,2).Trim]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
                                   </Sequence>
                                 </ActivityAction>
                               </ui:BrowserScope.Body>
                             </ui:BrowserScope>
                           </Sequence>
                         </Sequence>
+                        <FlowStep.Next>
+                          <FlowStep x:Name="__ReferenceID4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:Point x:Key="ShapeLocation">200,619.58</av:Point>
+                                <av:Size x:Key="ShapeSize">200,51</av:Size>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[out_Plans]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:LogMessage>
+                          </FlowStep>
+                        </FlowStep.Next>
                       </FlowStep>
                     </FlowStep.Next>
                   </FlowStep>
@@ -622,6 +675,7 @@
       <x:Reference>__ReferenceID1</x:Reference>
       <x:Reference>__ReferenceID2</x:Reference>
       <x:Reference>__ReferenceID3</x:Reference>
+      <x:Reference>__ReferenceID4</x:Reference>
     </Flowchart>
   </Sequence>
 </Activity>
