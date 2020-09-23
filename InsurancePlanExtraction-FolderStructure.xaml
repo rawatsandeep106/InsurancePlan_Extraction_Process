@@ -58,12 +58,12 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:PathExists DisplayName="Path Exists" Exists="[varErrorFolderExist]" sap:VirtualizedContainerService.HintSize="484,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[&quot;Error\&quot;+Now.ToString(&quot;dd.MM.yyyy&quot;)]" PathType="Folder" />
+    <ui:PathExists DisplayName="Path Exists" Exists="[varErrorFolderExist]" sap:VirtualizedContainerService.HintSize="484,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="Error" PathType="Folder" />
     <If Condition="[varErrorFolderExist]" DisplayName="If(Error folder exists?)" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[&quot;Error\&quot;+Now.ToString(&quot;dd.MM.yyyy&quot;)]" />
+        <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delete_1" Path="Error" />
       </If.Then>
     </If>
-    <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="484,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[&quot;Error\&quot;+Now.ToString(&quot;dd.MM.yyyy&quot;)]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="484,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="Error" />
   </Sequence>
 </Activity>
