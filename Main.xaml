@@ -331,9 +331,9 @@
                                               <av:PointCollection x:Key="ConnectorLocation">300,275.5 300,305.5 299.641666666667,305.5 299.641666666667,315.5</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <TryCatch sap:VirtualizedContainerService.HintSize="577,859" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                          <TryCatch sap:VirtualizedContainerService.HintSize="577,867" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                             <TryCatch.Try>
-                                              <Sequence sap:VirtualizedContainerService.HintSize="539,632" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                              <Sequence sap:VirtualizedContainerService.HintSize="539,640" sap2010:WorkflowViewState.IdRef="Sequence_29">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -347,17 +347,18 @@
                                                     <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <Switch x:TypeArguments="x:String" DisplayName="Switch(Select Website For Extraction" Expression="[item.trim]" sap:VirtualizedContainerService.HintSize="497,440" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                                                <Switch x:TypeArguments="x:String" DisplayName="Switch(Select Website For Extraction" Expression="[item.trim]" sap:VirtualizedContainerService.HintSize="497,448" sap2010:WorkflowViewState.IdRef="Switch`1_2">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Sequence x:Key="Aetna" sap:VirtualizedContainerService.HintSize="526,553" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                                  <Sequence x:Key="Aetna_N" DisplayName="Aetna" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_28">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-Aetna workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-Aetna.xaml">
@@ -414,7 +415,71 @@
                                                     </ui:InvokeWorkflowFile>
                                                   </Sequence>
                                                   <x:Null x:Key="Blue Cross Blue Shield" />
-                                                  <x:Null x:Key="Cigna" />
+                                                  <Sequence x:Key="Cigna" DisplayName="Cigna" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-Cigna workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-Cigna.xaml">
+                                                      <ui:InvokeWorkflowFile.Arguments>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_URL">
+                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;URL_Cigna&quot;).ToString.Trim" />
+                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_PostalCode">
+                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="PostalCode.Trim" />
+                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_Degree" />
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">
+                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FirstName.Trim" />
+                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_LastName">
+                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LastName.Trim" />
+                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_County">
+                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="County.Trim" />
+                                                        </InArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Plans">
+                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OutputPlans" />
+                                                        </OutArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Status">
+                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Status" />
+                                                        </OutArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Comment">
+                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Comment" />
+                                                        </OutArgument>
+                                                      </ui:InvokeWorkflowFile.Arguments>
+                                                    </ui:InvokeWorkflowFile>
+                                                    <If Condition="[Status = &quot;Failed&quot;]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_8">
+                                                      <If.Then>
+                                                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+                                                          <Assign.To>
+                                                            <OutArgument x:TypeArguments="x:String">[OutputPlans]</OutArgument>
+                                                          </Assign.To>
+                                                          <Assign.Value>
+                                                            <InArgument x:TypeArguments="x:String">[Comment]</InArgument>
+                                                          </Assign.Value>
+                                                        </Assign>
+                                                      </If.Then>
+                                                    </If>
+                                                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-AddValueToDataTable workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-AddValueToDataTable.xaml">
+                                                      <ui:InvokeWorkflowFile.Arguments>
+                                                        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_TransactionData">
+                                                          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="TransactionData" />
+                                                        </InOutArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_ColToUpdate">
+                                                          <Literal x:TypeArguments="x:String">Cigna</Literal>
+                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">
+                                                          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="TransactionNumber" />
+                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_OutputPlans">
+                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="OutputPlans" />
+                                                        </InArgument>
+                                                      </ui:InvokeWorkflowFile.Arguments>
+                                                    </ui:InvokeWorkflowFile>
+                                                  </Sequence>
                                                   <x:Null x:Key="Coventry Health Care" />
                                                   <x:Null x:Key="First Health (Coventry Health Care)" />
                                                   <x:Null x:Key="PPO" />
