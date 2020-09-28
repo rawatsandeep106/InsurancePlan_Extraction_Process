@@ -26,3 +26,19 @@ git staus
 git status
 clear
 exit
+git status
+git add -A
+git status
+git commit -m "Cigna Development and Testing Done"
+git staus
+git status
+git push orgin master
+git origin master
+git push origin master
+ls
+ls
+cd
+cd
+ls
+close
+exit
