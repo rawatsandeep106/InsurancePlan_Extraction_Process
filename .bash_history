@@ -42,3 +42,14 @@ cd
 ls
 close
 exit
+git status
+git add -A
+git add -A
+git status
+git commit -m "Anthem WF added before testing"
+git push origin master
+git push
+cleatr
+clear
+log out
+logout
