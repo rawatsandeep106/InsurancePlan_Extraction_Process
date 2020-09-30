@@ -290,9 +290,7 @@
                                 </Assign>
                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-TakeScreenshot.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_Path">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Error\Cigna_PNF_&quot;+in_Degree+&quot;_&quot;+in_FirstName+&quot;_&quot;+in_LastName+&quot;.jpeg&quot;" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_Path">["Error\Cigna_PNF_"+in_Degree+"_"+in_FirstName+"_"+in_LastName+".jpeg"]</InArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
                               </Sequence>
@@ -331,7 +329,7 @@
                         <av:PointCollection x:Key="ConnectorLocation">190,507.58 190,537.58</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Doctor Selection" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <Sequence DisplayName="Doctor Selection" sap:VirtualizedContainerService.HintSize="1033,2682" sap2010:WorkflowViewState.IdRef="Sequence_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -431,7 +429,7 @@
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <If Condition="[Regex.IsMatch(row(0).ToString.Trim.ToLower,&quot;\b&quot;+in_FirstName+&quot;\b&quot;,RegexOptions.IgnoreCase) And Regex.IsMatch(row(0).ToString.Trim.ToLower,&quot;\b&quot;+in_LastName+&quot;\b&quot;,RegexOptions.IgnoreCase) And Regex.IsMatch(row(0).ToString.Trim.ToLower,&quot;\b&quot;+in_County+&quot;\b&quot;,RegexOptions.IgnoreCase)]" DisplayName="If(Check First Name, Last Name , Middle Name, County)" sap:VirtualizedContainerService.HintSize="525,374" sap2010:WorkflowViewState.IdRef="If_1">
+                                                <If Condition="[Regex.IsMatch(row(0).ToString.Trim.ToLower,&quot;\b&quot;+in_FirstName+&quot;\b&quot;,RegexOptions.IgnoreCase) And Regex.IsMatch(row(0).ToString.Trim.ToLower,&quot;\b&quot;+in_LastName+&quot;\b&quot;,RegexOptions.IgnoreCase)]" DisplayName="If(Check First Name, Last Name , Middle Name, County)" sap:VirtualizedContainerService.HintSize="525,374" sap2010:WorkflowViewState.IdRef="If_1">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -566,9 +564,7 @@
                                               </Assign>
                                               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-TakeScreenshot.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_Path">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Error\Cigna_DNF_&quot;+in_Degree+&quot;_&quot;+in_FirstName+&quot;_&quot;+in_LastName+&quot;.jpeg&quot;" />
-                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_Path">["Error\Cigna_DNF_"+in_Degree+"_"+in_FirstName+"_"+in_LastName+".jpeg"]</InArgument>
                                                 </ui:InvokeWorkflowFile.Arguments>
                                               </ui:InvokeWorkflowFile>
                                             </Sequence>
@@ -664,7 +660,7 @@
                                     <av:PointCollection x:Key="ConnectorLocation">290,856.58 460,856.58 460,812.04</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Plans Extraction" sap:VirtualizedContainerService.HintSize="1286,1426" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                <Sequence DisplayName="Plans Extraction" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_22">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -802,9 +798,7 @@
                                           </Assign>
                                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-TakeScreenshot.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
-                                              <InArgument x:TypeArguments="x:String" x:Key="in_Path">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Error\Cigna_PCM_&quot;+in_Degree+&quot;_&quot;+in_FirstName+&quot;_&quot;+in_LastName+&quot;.jpeg&quot;" />
-                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_Path">["Error\Cigna_PCM_"+in_Degree+"_"+in_FirstName+"_"+in_LastName+".jpeg"]</InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                           </ui:InvokeWorkflowFile>
                                         </Sequence>

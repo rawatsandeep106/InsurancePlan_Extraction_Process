@@ -53,3 +53,13 @@ cleatr
 clear
 log out
 logout
+git status
+git add -A
+git add -A
+git status
+git commit -m "Cigna Bug Fixing and Added Multiplan WF"
+git push origin master
+git push
+git status
+clear
+exit
