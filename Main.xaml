@@ -163,7 +163,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">120,520 120,550 480,550 480,520</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="**Involves the complete flow of Processing and results the processing Success or Failure" DisplayName="Processing" sap:VirtualizedContainerService.HintSize="676,824" sap2010:WorkflowViewState.IdRef="Sequence_20">
+              <Sequence sap2010:Annotation.AnnotationText="**Involves the complete flow of Processing and results the processing Success or Failure" DisplayName="Processing" sap:VirtualizedContainerService.HintSize="200,123" sap2010:WorkflowViewState.IdRef="Sequence_20">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -597,7 +597,7 @@
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-Anthem workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-Anthem.xaml">
+                                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-Anthem workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-Anthem_Deepika.xaml">
                                                             <ui:InvokeWorkflowFile.Arguments>
                                                               <InArgument x:TypeArguments="x:String" x:Key="in_STATE">[State.Trim]</InArgument>
                                                               <InArgument x:TypeArguments="x:String" x:Key="in_zip">[PostalCode.Trim]</InArgument>
