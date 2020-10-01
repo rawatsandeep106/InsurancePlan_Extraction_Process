@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="861,801" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="861,841" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
       <x:String>System.Activities</x:String>
@@ -449,24 +449,12 @@
                                                     </Assign>
                                                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-BlueCrossBlueShield workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-BlueCrossBlueShield.xaml">
                                                       <ui:InvokeWorkflowFile.Arguments>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_PostalCode">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="PostalCode" />
-                                                        </InArgument>
-                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Status">
-                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Status" />
-                                                        </OutArgument>
-                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Comment">
-                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Comment" />
-                                                        </OutArgument>
-                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_InsurancePlans">
-                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OutputPlans" />
-                                                        </OutArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_URL">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;URL_BCBS&quot;).ToString.Trim" />
-                                                        </InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_NPI">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NPINumber" />
-                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_PostalCode">[PostalCode]</InArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Status">[Status]</OutArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Comment">[Comment]</OutArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_InsurancePlans">[OutputPlans]</OutArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_URL">[Config("URL_BCBS").ToString.Trim]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_NPI">[NPINumber]</InArgument>
                                                       </ui:InvokeWorkflowFile.Arguments>
                                                     </ui:InvokeWorkflowFile>
                                                     <If Condition="[Status = &quot;Failed&quot;]" DisplayName="If(Status comes out as Failed)" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_10">
@@ -499,33 +487,15 @@
                                                     </Assign>
                                                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-Cigna workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-Cigna.xaml">
                                                       <ui:InvokeWorkflowFile.Arguments>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_URL">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;URL_Cigna&quot;).ToString.Trim" />
-                                                        </InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_PostalCode">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="PostalCode.Trim" />
-                                                        </InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_Degree">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Degree.Trim" />
-                                                        </InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FirstName.Trim" />
-                                                        </InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_LastName">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LastName.Trim" />
-                                                        </InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_County">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="County.Trim" />
-                                                        </InArgument>
-                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Plans">
-                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OutputPlans" />
-                                                        </OutArgument>
-                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Status">
-                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Status" />
-                                                        </OutArgument>
-                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Comment">
-                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Comment" />
-                                                        </OutArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_URL">[Config("URL_Cigna").ToString.Trim]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_PostalCode">[PostalCode.Trim]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_Degree">[Degree.Trim]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">[FirstName.Trim]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[LastName.Trim]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_County">[County.Trim]</InArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Plans">[OutputPlans]</OutArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Status">[Status]</OutArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Comment">[Comment]</OutArgument>
                                                       </ui:InvokeWorkflowFile.Arguments>
                                                     </ui:InvokeWorkflowFile>
                                                     <If Condition="[Status = &quot;Failed&quot;]" DisplayName="If(Status comes  out as Failed)" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_8">
@@ -629,27 +599,13 @@
                                                           </sap:WorkflowViewStateService.ViewState>
                                                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-Anthem workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-Anthem.xaml">
                                                             <ui:InvokeWorkflowFile.Arguments>
-                                                              <InArgument x:TypeArguments="x:String" x:Key="in_STATE">
-                                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="State.Trim" />
-                                                              </InArgument>
-                                                              <InArgument x:TypeArguments="x:String" x:Key="in_zip">
-                                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="PostalCode.Trim" />
-                                                              </InArgument>
-                                                              <InArgument x:TypeArguments="x:String" x:Key="in_NPI">
-                                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NPINumber.Trim" />
-                                                              </InArgument>
-                                                              <OutArgument x:TypeArguments="x:String" x:Key="out_status">
-                                                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Status" />
-                                                              </OutArgument>
-                                                              <OutArgument x:TypeArguments="x:String" x:Key="out_comment">
-                                                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Comment" />
-                                                              </OutArgument>
-                                                              <OutArgument x:TypeArguments="x:String" x:Key="out_extractdata">
-                                                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OutputPlans" />
-                                                              </OutArgument>
-                                                              <InArgument x:TypeArguments="x:String" x:Key="in_URL">
-                                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;URL_Anthem&quot;).ToString.Trim" />
-                                                              </InArgument>
+                                                              <InArgument x:TypeArguments="x:String" x:Key="in_STATE">[State.Trim]</InArgument>
+                                                              <InArgument x:TypeArguments="x:String" x:Key="in_zip">[PostalCode.Trim]</InArgument>
+                                                              <InArgument x:TypeArguments="x:String" x:Key="in_NPI">[NPINumber.Trim]</InArgument>
+                                                              <OutArgument x:TypeArguments="x:String" x:Key="out_status">[Status]</OutArgument>
+                                                              <OutArgument x:TypeArguments="x:String" x:Key="out_comment">[Comment]</OutArgument>
+                                                              <OutArgument x:TypeArguments="x:String" x:Key="out_extractdata">[OutputPlans]</OutArgument>
+                                                              <InArgument x:TypeArguments="x:String" x:Key="in_URL">[Config("URL_Anthem").ToString.Trim]</InArgument>
                                                             </ui:InvokeWorkflowFile.Arguments>
                                                           </ui:InvokeWorkflowFile>
                                                           <If Condition="[Status = &quot;Failed&quot;]" DisplayName="If(Status comes  out as Failed)" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_11">
@@ -692,27 +648,13 @@
                                                     </Assign>
                                                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-Multiplan_PPO_PHCS workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-Multiplan_PPO_PHCS.xaml">
                                                       <ui:InvokeWorkflowFile.Arguments>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_PlanType">
-                                                          <Literal x:TypeArguments="x:String">PPO</Literal>
-                                                        </InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_URL">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;URL_Multiplan&quot;).ToString.Trim" />
-                                                        </InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_PostalCode">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="PostalCode.Trim" />
-                                                        </InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_NPINumber">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NPINumber.Trim" />
-                                                        </InArgument>
-                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Status">
-                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Status" />
-                                                        </OutArgument>
-                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Comment">
-                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Comment" />
-                                                        </OutArgument>
-                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_PlanPresent">
-                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OutputPlans" />
-                                                        </OutArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_PlanType">PPO</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_URL">[Config("URL_Multiplan").ToString.Trim]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_PostalCode">[PostalCode.Trim]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_NPINumber">[NPINumber.Trim]</InArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Status">[Status]</OutArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Comment">[Comment]</OutArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_PlanPresent">[OutputPlans]</OutArgument>
                                                       </ui:InvokeWorkflowFile.Arguments>
                                                     </ui:InvokeWorkflowFile>
                                                     <If Condition="[Status = &quot;Failed&quot;]" DisplayName="If(Status comes  out as Failed)" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_14">
@@ -751,27 +693,13 @@
                                                     </Assign>
                                                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-Multiplan_PPO_PHCS workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-Multiplan_PPO_PHCS.xaml">
                                                       <ui:InvokeWorkflowFile.Arguments>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_PlanType">
-                                                          <Literal x:TypeArguments="x:String">PHCS</Literal>
-                                                        </InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_URL">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;URL_Multiplan&quot;).ToString.Trim" />
-                                                        </InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_PostalCode">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="PostalCode.Trim" />
-                                                        </InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_NPINumber">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NPINumber.Trim" />
-                                                        </InArgument>
-                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Status">
-                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="State" />
-                                                        </OutArgument>
-                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Comment">
-                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Comment" />
-                                                        </OutArgument>
-                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_PlanPresent">
-                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OutputPlans" />
-                                                        </OutArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_PlanType">PHCS</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_URL">[Config("URL_Multiplan").ToString.Trim]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_PostalCode">[PostalCode.Trim]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_NPINumber">[NPINumber.Trim]</InArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Status">[State]</OutArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Comment">[Comment]</OutArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_PlanPresent">[OutputPlans]</OutArgument>
                                                       </ui:InvokeWorkflowFile.Arguments>
                                                     </ui:InvokeWorkflowFile>
                                                     <If Condition="[Status = &quot;Failed&quot;]" DisplayName="If(Status comes  out as Failed)" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_15">
@@ -795,7 +723,7 @@
                                                   </Sequence>
                                                   <x:Null x:Key="Dental_Y" />
                                                   <x:Null x:Key="Rest_Y" />
-                                                  <Sequence x:Key="Delta_Y" DisplayName="Delta Dental" sap:VirtualizedContainerService.HintSize="526,527" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                                  <Sequence x:Key="Delta Dental_Y" DisplayName="Delta Dental" sap:VirtualizedContainerService.HintSize="526,527" sap2010:WorkflowViewState.IdRef="Sequence_48">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -812,30 +740,14 @@
                                                     </Assign>
                                                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-Delta Dental workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-Delta Dental.xaml">
                                                       <ui:InvokeWorkflowFile.Arguments>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_Address">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FullAddress" />
-                                                        </InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_NPI">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="NPINumber.Trim" />
-                                                        </InArgument>
-                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Status">
-                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Status" />
-                                                        </OutArgument>
-                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Comment">
-                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Comment" />
-                                                        </OutArgument>
-                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Plans">
-                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OutputPlans" />
-                                                        </OutArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_URL">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;URL_Delta&quot;).ToString.Trim" />
-                                                        </InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_firstName">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FirstName.Trim" />
-                                                        </InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_LastName">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LastName.Trim" />
-                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_Address">[FullAddress]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_NPI">[NPINumber.Trim]</InArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Status">[Status]</OutArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Comment">[Comment]</OutArgument>
+                                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Plans">[OutputPlans]</OutArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_URL">[Config("URL_Delta").ToString.Trim]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_firstName">[FirstName.Trim]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[LastName.Trim]</InArgument>
                                                       </ui:InvokeWorkflowFile.Arguments>
                                                     </ui:InvokeWorkflowFile>
                                                     <If Condition="[Status = &quot;Failed&quot;]" DisplayName="If(Status comes out as Failed)" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_16">
@@ -866,7 +778,7 @@
                                                   <ActivityAction.Argument>
                                                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                                   </ActivityAction.Argument>
-                                                  <Sequence sap:VirtualizedContainerService.HintSize="643,1026" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="643,1029" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1069,9 +981,7 @@
                                                         </Assign>
                                                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-TakeScreenshot.xaml">
                                                           <ui:InvokeWorkflowFile.Arguments>
-                                                            <InArgument x:TypeArguments="x:String" x:Key="in_Path">
-                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Error\&quot;+item.Trim+&quot;_UKE_&quot;+Degree+&quot;_&quot;+FirstName+&quot;_&quot;+LastName+&quot;.jpeg&quot;" />
-                                                            </InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="in_Path">["Error\"+item.Trim+"_UKE_"+Degree+"_"+FirstName+"_"+LastName+".jpeg"]</InArgument>
                                                           </ui:InvokeWorkflowFile.Arguments>
                                                         </ui:InvokeWorkflowFile>
                                                         <TryCatch DisplayName="Closing Chrome" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="TryCatch_5">
@@ -1169,18 +1079,10 @@
                                     <If.Then>
                                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-AddValueToDataTable workflow" sap:VirtualizedContainerService.HintSize="357,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-AddValueToDataTable.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_TransactionData">
-                                            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="TransactionData" />
-                                          </InOutArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_ColToUpdate">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ColToUpdate" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">
-                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="TransactionNumber" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_OutputPlans">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="OutputPlans" />
-                                          </InArgument>
+                                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_TransactionData">[TransactionData]</InOutArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_ColToUpdate">[ColToUpdate]</InArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">[TransactionNumber]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_OutputPlans">[OutputPlans]</InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
                                     </If.Then>

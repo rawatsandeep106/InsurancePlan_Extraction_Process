@@ -63,3 +63,35 @@ git push
 git status
 clear
 exit
+git status
+git add -A
+git status
+it commit -m "County validation removed from Cigna, Anthem selector fixed, Multiplan Development and First Set of Testing Done"
+git commit -m "County validation removed from Cigna, Anthem selector fixed, Multiplan Development and First Set of Testing Done"
+git push origin master
+git push
+clear
+git status
+git add -A
+git commit -m "Anthem null value assignment error fixed and tested"
+git push origin master
+git status
+git status
+git push
+clear
+git status
+clear
+git status
+git add -a
+git status
+git add -
+git add -A
+git status
+git commit -m "Renamed Blue Cross WF, Added Delta Dental WF"
+git commit
+git status
+git push origin master
+git push
+clear
+close
+exit
