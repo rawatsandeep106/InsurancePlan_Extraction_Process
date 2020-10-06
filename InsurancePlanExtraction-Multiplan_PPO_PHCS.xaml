@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="InsurancePlanExtraction_Multiplan_PPO_PHCS" this:InsurancePlanExtraction_Multiplan_PPO_PHCS.in_PlanType="PPO" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="InsurancePlanExtraction_Multiplan_PPO_PHCS" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_PlanType" Type="InArgument(x:String)" />
     <x:Property Name="in_URL" Type="InArgument(x:String)" />
@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>801,1339</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>888,1339</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InsurancePlanExtraction_Multiplan_PPO_PHCS_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -100,7 +100,7 @@
             <av:PointCollection x:Key="ConnectorLocation">300,158.5 300,177</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="510,628" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Url="[in_URL]">
+        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Url="[in_URL]">
           <ui:OpenBrowser.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -447,10 +447,7 @@
                                         </sap:WorkflowViewStateService.ViewState>
                                         <PickBranch DisplayName="PickBranch(PC Correct)" sap:VirtualizedContainerService.HintSize="484,800" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                                           <PickBranch.Trigger>
-                                            <ui:OnUiElementAppear Body="{x:Null}" ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="On Element Appear(Records Found Text)" sap:VirtualizedContainerService.HintSize="434,123" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_4">
-                                              <ui:OnUiElementAppear.RepeatForever>
-                                                <Literal x:TypeArguments="x:Boolean" />
-                                              </ui:OnUiElementAppear.RepeatForever>
+                                            <ui:OnUiElementAppear Body="{x:Null}" ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="On Element Appear(Records Found Text)" sap:VirtualizedContainerService.HintSize="434,123" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_4" RepeatForever="False">
                                               <ui:OnUiElementAppear.Target>
                                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e7567970-219e-4160-9ebb-98db8f1532e0" Selector="&lt;webctrl parentid='T:dclay:oc_8844291491rWQlMi1:pgl8522' tag='SPAN' /&gt;" WaitForReady="COMPLETE">
                                                   <ui:Target.TimeoutMS>
@@ -471,10 +468,7 @@
                                         </PickBranch>
                                         <PickBranch DisplayName="PickBranch(PC Incorrect)" sap:VirtualizedContainerService.HintSize="484,800" sap2010:WorkflowViewState.IdRef="PickBranch_2">
                                           <PickBranch.Trigger>
-                                            <ui:OnUiElementAppear Body="{x:Null}" ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="On Element Appear(Incorrect PC Pop Up" sap:VirtualizedContainerService.HintSize="434,123" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_5">
-                                              <ui:OnUiElementAppear.RepeatForever>
-                                                <Literal x:TypeArguments="x:Boolean" />
-                                              </ui:OnUiElementAppear.RepeatForever>
+                                            <ui:OnUiElementAppear Body="{x:Null}" ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="On Element Appear(Incorrect PC Pop Up" sap:VirtualizedContainerService.HintSize="434,123" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_5" RepeatForever="False">
                                               <ui:OnUiElementAppear.Target>
                                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3ea010f4-8354-4f59-b3af-ea1f2507ab11" Selector="&lt;webctrl isleaf='1' tableRow='2' tag='DIV' aaname='Please enter a valid City &amp;amp; State or Zip Code' innertext='Please enter a valid City &amp;amp; State or Zip Code' /&gt;" WaitForReady="COMPLETE">
                                                   <ui:Target.TimeoutMS>
@@ -500,9 +494,7 @@
                                             </Assign>
                                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-TakeScreenshot.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
-                                                <InArgument x:TypeArguments="x:String" x:Key="in_Path">
-                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Error\Multiplan_&quot;+in_PlanType+&quot;_PNF_&quot;+in_NPINumber+&quot;.jpeg&quot;" />
-                                                </InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_Path">["Error\Multiplan_"+in_PlanType+"_PNF_"+in_NPINumber+".jpeg"]</InArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                             </ui:InvokeWorkflowFile>
                                             <Assign DisplayName="Assign Status" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
@@ -530,10 +522,7 @@
                               </ui:BrowserScope>
                             </Sequence>
                             <FlowStep.Next>
-                              <FlowDecision x:Name="__ReferenceID7" DisplayName="ZipCode Correct?" sap:VirtualizedContainerService.HintSize="98,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
-                                <FlowDecision.Condition>
-                                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="varPostalCodeFound" />
-                                </FlowDecision.Condition>
+                              <FlowDecision x:Name="__ReferenceID7" Condition="[varPostalCodeFound]" DisplayName="ZipCode Correct?" sap:VirtualizedContainerService.HintSize="98,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -644,9 +633,7 @@
                                                     </Assign>
                                                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-TakeScreenshot.xaml">
                                                       <ui:InvokeWorkflowFile.Arguments>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="in_Path">
-                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Error\Multiplan_&quot;+in_PlanType+&quot;_DNF_&quot;+in_NPINumber+&quot;.jpeg&quot;" />
-                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_Path">["Error\Multiplan_"+in_PlanType+"_DNF_"+in_NPINumber+".jpeg"]</InArgument>
                                                       </ui:InvokeWorkflowFile.Arguments>
                                                     </ui:InvokeWorkflowFile>
                                                   </Sequence>
