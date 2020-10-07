@@ -95,3 +95,9 @@ git push
 clear
 close
 exit
+git clone https://github.com/rawatsandeep106/InsurancePlan_Extraction_Process.git
+git status
+git status
+ls
+git clone https://github.com/rawatsandeep106/InsurancePlan_Extraction_Process.git
+git status
