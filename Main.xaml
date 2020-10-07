@@ -397,7 +397,7 @@
                                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <Sequence x:Key="Aetna_Y" DisplayName="Aetna" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                                        <Sequence x:Key="Aetna_Y" DisplayName="Aetna" sap:VirtualizedContainerService.HintSize="526,66" sap2010:WorkflowViewState.IdRef="Sequence_28">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -637,7 +637,7 @@
                                                             </If.Else>
                                                           </If>
                                                         </Sequence>
-                                                        <Sequence x:Key="Coventry Health Care_Y" DisplayName="Coventry Health Care" sap:VirtualizedContainerService.HintSize="526,527" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                                        <Sequence x:Key="First Health Coventry_Y" DisplayName="First Health Coventry" sap:VirtualizedContainerService.HintSize="526,527" sap2010:WorkflowViewState.IdRef="Sequence_51">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -648,7 +648,7 @@
                                                               <OutArgument x:TypeArguments="x:String">[ColToUpdate]</OutArgument>
                                                             </Assign.To>
                                                             <Assign.Value>
-                                                              <InArgument x:TypeArguments="x:String">Coventry Health Care</InArgument>
+                                                              <InArgument x:TypeArguments="x:String">First Health Coventry</InArgument>
                                                             </Assign.Value>
                                                           </Assign>
                                                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-FirstHealthCoventry workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-FirstHealthCoventry.xaml">
@@ -692,7 +692,7 @@
                                                             </If.Then>
                                                           </If>
                                                         </Sequence>
-                                                        <Sequence x:Key="PPO_Y" DisplayName="Multiplan-PPO" sap:VirtualizedContainerService.HintSize="526,527" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                                        <Sequence x:Key="PPO_Y" DisplayName="Multiplan-PPO" sap:VirtualizedContainerService.HintSize="526,524" sap2010:WorkflowViewState.IdRef="Sequence_46">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -839,7 +839,7 @@
                                                         <ActivityAction.Argument>
                                                           <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                                         </ActivityAction.Argument>
-                                                        <Sequence sap:VirtualizedContainerService.HintSize="304,343" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                                        <Sequence sap:VirtualizedContainerService.HintSize="304,340" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>

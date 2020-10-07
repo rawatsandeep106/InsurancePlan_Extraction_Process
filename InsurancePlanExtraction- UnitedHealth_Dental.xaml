@@ -1,0 +1,402 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="InsurancePlanExtraction__United_Health_Dental" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_URL" Type="InArgument(x:String)" />
+    <x:Property Name="in_FirstName" Type="InArgument(x:String)" />
+    <x:Property Name="in_LastName" Type="InArgument(x:String)" />
+    <x:Property Name="in_StateName" Type="InArgument(x:String)" />
+    <x:Property Name="out_Status" Type="OutArgument(x:String)" />
+    <x:Property Name="out_Comment" Type="OutArgument(x:String)" />
+    <x:Property Name="out_PlanExtraction" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1224,2673</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>InsurancePlanExtraction__United_Health_Detal_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="21">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="17">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="To find the record of the Provider by last name and first name with State provided." DisplayName="InsurancePlanExtraction- United_Health_Dental" sap:VirtualizedContainerService.HintSize="1234,2468" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser - Chrome" sap:VirtualizedContainerService.HintSize="1192,2345" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_URL]">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1158,2244" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If sap2010:Annotation.AnnotationText="Looking at the Records by First Name and Last Name with State must be provided." Condition="[(in_StateName isNot Nothing) And ( in_LastName IsNot Nothing)]" DisplayName="Checking If Last Name or State is Provided or Not" sap:VirtualizedContainerService.HintSize="1116,2152" sap2010:WorkflowViewState.IdRef="If_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Finding Sequence" sap:VirtualizedContainerService.HintSize="695,1974" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="NoRecordFound" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click  Dentist" sap:VirtualizedContainerService.HintSize="653,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="feb6358a-9416-4df8-98f4-ab68320b5a74" InformativeScreenshot="27259e2cc3de6d92d9245be70b431d10" Selector="&lt;webctrl aaname='Dentist' parentid='find-dr-icons-links' tag='A' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Dentist Name" sap:VirtualizedContainerService.HintSize="653,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="adf6698a-f695-46ae-af98-9252563e2bab" InformativeScreenshot="a3871c6a74d5d322b799dba24d071326" Selector="&lt;html app='chrome.exe' title='Provider Search' /&gt;&lt;webctrl aaname='*Dentist Name*' parentid='searchInput' tag='LABEL' parentclass='no-bullet' /&gt;" WaitForReady="COMPLETE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Last Name" EmptyField="True" sap:VirtualizedContainerService.HintSize="653,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[in_LastName]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ccbdb483-a170-4e11-a2be-e48f0abdf2b2" InformativeScreenshot="c6691c29a7fbe42573e97a0a3a3bc98e" Selector="&lt;html app='chrome.exe' title='Provider Search' /&gt;&lt;webctrl tag='INPUT' type='text' name='dentistLastName' parentid='searchByDentistName' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:TypeInto.Target>
+                  </ui:TypeInto>
+                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type First Name" EmptyField="True" sap:VirtualizedContainerService.HintSize="653,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[in_FirstName]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ccbdb483-a170-4e11-a2be-e48f0abdf2b2" InformativeScreenshot="9ab91edb7273c283a083ef56b055855f" Selector="&lt;html app='chrome.exe' title='Provider Search' /&gt;&lt;webctrl tag='INPUT' type='text' name='dentistFirstName' parentid='searchByDentistName' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:TypeInto.Target>
+                  </ui:TypeInto>
+                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select State" sap:VirtualizedContainerService.HintSize="653,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[in_StateName]">
+                    <ui:SelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="50">
+                        <x:String>Select One</x:String>
+                        <x:String>Alabama</x:String>
+                        <x:String>Alaska</x:String>
+                        <x:String>Arizona</x:String>
+                        <x:String>Arkansas</x:String>
+                        <x:String>California</x:String>
+                        <x:String>Colorado</x:String>
+                        <x:String>Connecticut</x:String>
+                        <x:String>Delaware</x:String>
+                        <x:String>District Of Columbia</x:String>
+                        <x:String>Florida</x:String>
+                        <x:String>Georgia</x:String>
+                        <x:String>Hawaii</x:String>
+                        <x:String>Idaho</x:String>
+                        <x:String>Illinois</x:String>
+                        <x:String>Indiana</x:String>
+                        <x:String>Iowa</x:String>
+                        <x:String>Kansas</x:String>
+                        <x:String>Kentucky</x:String>
+                        <x:String>Louisiana</x:String>
+                        <x:String>Maine</x:String>
+                        <x:String>Maryland</x:String>
+                        <x:String>Massachusetts</x:String>
+                        <x:String>Michigan</x:String>
+                        <x:String>Minnesota</x:String>
+                        <x:String>Mississippi</x:String>
+                        <x:String>Missouri</x:String>
+                        <x:String>Montana</x:String>
+                        <x:String>Nebraska</x:String>
+                        <x:String>Nevada</x:String>
+                        <x:String>New Hampshire</x:String>
+                        <x:String>New Jersey</x:String>
+                        <x:String>New Mexico</x:String>
+                        <x:String>New York</x:String>
+                        <x:String>North Carolina</x:String>
+                        <x:String>North Dakota</x:String>
+                        <x:String>Ohio</x:String>
+                        <x:String>Oklahoma</x:String>
+                        <x:String>Oregon</x:String>
+                        <x:String>Pennsylvania</x:String>
+                        <x:String>Rhode Island</x:String>
+                        <x:String>South Carolina</x:String>
+                        <x:String>South Dakota</x:String>
+                        <x:String>Tennessee</x:String>
+                        <x:String>Texas</x:String>
+                        <x:String>Utah</x:String>
+                        <x:String>Vermont</x:String>
+                        <x:String>Virginia</x:String>
+                        <x:String>Washington</x:String>
+                        <x:String>West Virginia</x:String>
+                      </scg:List>
+                    </ui:SelectItem.Items>
+                    <ui:SelectItem.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="76a80986-516b-4647-a7c5-92b490162661" InformativeScreenshot="73ce93f515a69fb71a476fe82edd965e" Selector="&lt;html app='chrome.exe' title='Provider Search' /&gt;&lt;webctrl tag='SELECT' name='dentistState' parentid='searchByDentistName' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SelectItem.Target>
+                  </ui:SelectItem>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Search" sap:VirtualizedContainerService.HintSize="653,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fa01b2e2-e805-48aa-aa51-82775b1021bc" InformativeScreenshot="f725ee2dc5bd1d3c48b55c4e5827dcc9" Selector="&lt;html app='chrome.exe' title='Provider Search' /&gt;&lt;webctrl tag='A' class='button' innertext='Search' parentid='buttonsGroup' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:UiElementExists DisplayName="Table Exist" Exists="[NoRecordFound]" sap:VirtualizedContainerService.HintSize="653,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="35792489-4bf9-4810-ad2f-1cca41d26b27" InformativeScreenshot="cb6d50f5fe2c7842961b2a778db8d11a" Selector="&lt;html app='chrome.exe' title='Provider Search' /&gt;&lt;webctrl tag='DIV' class='reveal-modal medium large open' innertext='*Sorry, we were unable to find Providers that met the criteria, please refine your search* ' id='alertModal' /&gt;" TimeoutMS="3000">
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="653,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Fatal" Message="[&quot; Record Found: &quot;+ NoRecordFound.ToString]" />
+                  <If Condition="[NoRecordFound]" sap:VirtualizedContainerService.HintSize="653,499" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence DisplayName="Record Doesn't Exist" sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_PlanExtraction]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">No</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Failed</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_Comment]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Doctor Not Found</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Record Exist" sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_PlanExtraction]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Yes</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Success</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_Comment]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Doctor Found</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <ui:CloseApplication DisplayName="Close Application " sap:VirtualizedContainerService.HintSize="653,106" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+                    <ui:CloseApplication.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ab69a17-768d-409b-bfab-36adfdb4e19b" InformativeScreenshot="77c1f52f136b6cc4e5eb15608e31e4bd" Selector="&lt;wnd app='chrome.exe' omit:cls='Chrome_WidgetWin_1' title='Provider Search - Google Chrome' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:CloseApplication.Target>
+                  </ui:CloseApplication>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Details Invalid" sap:VirtualizedContainerService.HintSize="376,498" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[out_PlanExtraction]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">No</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[out_Comment]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">Details Invalid</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">Failed</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:CloseApplication DisplayName="Close Application " sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="CloseApplication_2">
+                    <ui:CloseApplication.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ab69a17-768d-409b-bfab-36adfdb4e19b" InformativeScreenshot="73bd9a74f1c3aeec0fa563883bbcf208" Selector="&lt;wnd app='chrome.exe' omit:cls='Chrome_WidgetWin_1' title='Find a doctor | UnitedHealthcare - Google Chrome' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:CloseApplication.Target>
+                  </ui:CloseApplication>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:OpenBrowser>
+  </Sequence>
+</Activity>
