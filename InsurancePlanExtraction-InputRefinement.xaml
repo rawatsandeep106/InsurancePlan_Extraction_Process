@@ -272,7 +272,9 @@
                         <InvokeMethod.TargetObject>
                           <InArgument x:TypeArguments="scg:List(x:String)">[out_List]</InArgument>
                         </InvokeMethod.TargetObject>
-                        <InArgument x:TypeArguments="x:String">[item.Key]</InArgument>
+                        <InArgument x:TypeArguments="x:String">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="item.Key" />
+                        </InArgument>
                       </InvokeMethod>
                     </If.Else>
                   </If>

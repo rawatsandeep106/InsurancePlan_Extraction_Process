@@ -101,3 +101,22 @@ git status
 ls
 git clone https://github.com/rawatsandeep106/InsurancePlan_Extraction_Process.git
 git status
+ls
+git status
+git add -A
+git add -A
+git status
+git commit -m "First Health Coventry Added and bug fixed"
+git status
+git push origin master
+git status
+git status
+git add -A
+git status
+git commit -m "UHC Rest Flow added and First Health Coventry Switch case renaming"
+git push origin master
+clear
+git status
+git push
+clear
+logout
