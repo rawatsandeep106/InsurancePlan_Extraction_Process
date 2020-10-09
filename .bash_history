@@ -120,3 +120,19 @@ git status
 git push
 clear
 logout
+git 
+git commit -m "Initial Commmit for already bult in code"
+git add -A
+git commit -m "Initial Commmit for already bult in code"
+git remote origin "https://github.com/rawatsandeep106/DamcoZillowCountiesByHimanshuRPA.git"
+git remote add https://github.com/rawatsandeep106/DamcoZillowCountiesByHimanshuRPA.git
+git remote origin add https://github.com/rawatsandeep106/DamcoZillowCountiesByHimanshuRPA.git
+git remote add origin https://github.com/rawatsandeep106/DamcoZillowCountiesByHimanshuRPA.git
+git push origin master
+git status
+git push add -A
+git add -A
+git commit -m "Size cleanup"
+git push origin master
+git push
+clear
