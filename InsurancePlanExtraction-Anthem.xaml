@@ -74,7 +74,7 @@
       <Variable x:TypeArguments="x:Boolean" Name="varPostalCodeFound" />
       <Variable x:TypeArguments="s:String[]" Name="arrPlanType">
         <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;Medical Networks&quot;,&quot;Medical (individual and families)&quot;,&quot;Medical (Employer-Sponsored)&quot;,&quot;Medicare&quot;}" />
+          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;Medical (Employer-Sponsored)&quot;,&quot;Medicare&quot;,&quot;Medical (individual and families)&quot;,&quot;Medical Networks&quot;}" />
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="x:Boolean" Default="True" Name="varRetry" />
@@ -1294,7 +1294,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">530,657 530,633</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Plans Extraction" sap:VirtualizedContainerService.HintSize="1599,2544" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                  <Sequence DisplayName="Plans Extraction" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_22">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="InsurancePlanExtraction_UnitedHealth_Rest" this:InsurancePlanExtraction_UnitedHealth_Rest.in_FirstName="John" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="InsurancePlanExtraction_UnitedHealth_Rest" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_URL" Type="InArgument(x:String)" />
     <x:Property Name="in_State" Type="InArgument(x:String)" />
@@ -12,10 +12,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>888,1131</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1079,1247</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InsurancePlanExtraction_UnitedHealth_Rest_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="21">
+    <scg:List x:TypeArguments="x:String" Capacity="22">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -37,10 +37,11 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="17">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -58,6 +59,12 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="InsurancePlanExtraction_UnitedHealth_Rest" sap:VirtualizedContainerService.HintSize="634,1082" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -83,11 +90,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">90,943.58</av:Point>
-          <av:Size x:Key="ShapeSize">200,68</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">190,1011.58 190,1041.58 450,1041.58 450,1014.04</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,66</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">190,1009.58 190,1039.58 450,1039.58 450,1012.04</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Plans Extraction" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_9">
+      <Sequence DisplayName="Plans Extraction" sap:VirtualizedContainerService.HintSize="518,1296" sap2010:WorkflowViewState.IdRef="Sequence_9">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -117,7 +124,7 @@
                     </ui:CursorPosition>
                   </ui:Click.CursorPosition>
                   <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="429043ad-741a-499c-be4e-cc9e50237d19" InformativeScreenshot="1c650c95dcc31150c9e6e42ced67c8c1" Selector="&lt;webctrl idx='2' parentid='provider.plansTab' tag='H2' /&gt;">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="429043ad-741a-499c-be4e-cc9e50237d19" InformativeScreenshot="1c650c95dcc31150c9e6e42ced67c8c1" Selector="&lt;webctrl id='*.plansTab' tag='A' /&gt;">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -131,7 +138,7 @@
             </ActivityAction>
           </ui:BrowserScope.Body>
         </ui:BrowserScope>
-        <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="476,761" sap2010:WorkflowViewState.IdRef="Sequence_41">
+        <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="476,820" sap2010:WorkflowViewState.IdRef="Sequence_41">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="PlansDT" />
           </Sequence.Variables>
@@ -140,18 +147,19 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser UHC Rest" sap:VirtualizedContainerService.HintSize="434,669" sap2010:WorkflowViewState.IdRef="BrowserScope_10" InformativeScreenshot="014688752d6aa41bd1760cfc773904f5" Selector="&lt;html app='chrome.exe' title='*Find Care' /&gt;">
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser UHC Rest" sap:VirtualizedContainerService.HintSize="434,728" sap2010:WorkflowViewState.IdRef="BrowserScope_10" InformativeScreenshot="014688752d6aa41bd1760cfc773904f5" Selector="&lt;html app='chrome.exe' title='*Find Care' /&gt;">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,523" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,582" sap2010:WorkflowViewState.IdRef="Sequence_40">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <Delay DisplayName="Delay 2s" Duration="00:00:04" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_8" />
                   <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[PlansDT]" DisplayName="Extract Structured Data Plans DT" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Plans' attr='text'&gt;&lt;webctrl tag='div' class='childView' idx='1'/&gt;&lt;webctrl tag='div' class='acceptedPlansContainer' idx='1'/&gt;&lt;webctrl tag='div' class='provider-locations locations-detail outer-container' idx='1'/&gt;&lt;webctrl tag='div' class='tbl table-layout hidden-phone' idx='1'/&gt;&lt;webctrl tag='div' class='table-body locations'/&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' class='c-9-dt' idx='1'/&gt;&lt;webctrl tag='h3' class='main-heading fwReg' idx='1'/&gt;&lt;webctrl tag='span' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_3" MaxNumberOfResults="0" SimulateClick="True">
                     <ui:ExtractData.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7da3884a-7a22-412f-932d-ce5b4a1894bf" InformativeScreenshot="9fbb46780bd3dde402be6f1f563c1788" Selector="&lt;webctrl parentid='routerView' tag='SECTION' /&gt;" WaitForReady="COMPLETE">
@@ -161,7 +169,8 @@
                       </ui:Target>
                     </ui:ExtractData.Target>
                   </ui:ExtractData>
-                  <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[PlansDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[PlansDT.Rows.Count]" />
+                  <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[PlansDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
@@ -199,7 +208,6 @@
                       <InArgument x:TypeArguments="x:String">[out_Plans.Remove(out_Plans.Count-2,2).Trim]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[out_Plans]" />
                 </Sequence>
               </ActivityAction>
             </ui:BrowserScope.Body>
@@ -211,10 +219,10 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">350,946.04</av:Point>
-              <av:Size x:Key="ShapeSize">200,68</av:Size>
+              <av:Size x:Key="ShapeSize">200,66</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Close Website" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence DisplayName="Close Website" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -235,14 +243,14 @@
       </FlowStep.Next>
     </FlowStep>
     <x:Reference>__ReferenceID0</x:Reference>
-    <FlowDecision x:Name="__ReferenceID2" Condition="[varDoctorFound]" DisplayName="  DoctorFound ?  " sap:VirtualizedContainerService.HintSize="98,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1" True="{x:Reference __ReferenceID1}" False="{x:Reference __ReferenceID0}">
+    <FlowDecision x:Name="__ReferenceID2" Condition="[varDoctorFound]" DisplayName="  DoctorFound ?  " sap:VirtualizedContainerService.HintSize="96,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1" True="{x:Reference __ReferenceID1}" False="{x:Reference __ReferenceID0}">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <av:Point x:Key="ShapeLocation">142,787.58</av:Point>
-          <av:Size x:Key="ShapeSize">98,87</av:Size>
+          <av:Size x:Key="ShapeSize">96,87</av:Size>
           <av:PointCollection x:Key="TrueConnector">142,831.08 60,831.08 60,977.58 90,977.58</av:PointCollection>
-          <av:PointCollection x:Key="FalseConnector">240,831.08 450,831.08 450,946.04</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">238,831.08 450,831.08 450,946.04</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </FlowDecision>
@@ -250,29 +258,30 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">90,681.58</av:Point>
-          <av:Size x:Key="ShapeSize">200,68</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">190,749.58 190,779.58 191,779.58 191,787.58</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,66</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">190,747.58 190,777.58 191,777.58 191,787.58</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Doctor Selection" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_21">
+      <Sequence DisplayName="Doctor Selection" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_21">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser Cigna HomeScreen" sap:VirtualizedContainerService.HintSize="1160,1330" sap2010:WorkflowViewState.IdRef="BrowserScope_5" InformativeScreenshot="78bb8498c7d2cca0381e3d4e626e4684" Selector="&lt;html app='chrome.exe' title='*Find Care' /&gt;">
+        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser Cigna HomeScreen" sap:VirtualizedContainerService.HintSize="1565,1904" sap2010:WorkflowViewState.IdRef="BrowserScope_5" InformativeScreenshot="78bb8498c7d2cca0381e3d4e626e4684" Selector="&lt;html app='chrome.exe' title='*Find Care' /&gt;">
           <ui:BrowserScope.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1126,1184" sap2010:WorkflowViewState.IdRef="Sequence_20">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1531,1758" sap2010:WorkflowViewState.IdRef="Sequence_20">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT'" sap:VirtualizedContainerService.HintSize="1084,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_FirstName+&quot; &quot;+in_LastName]">
+                <Delay DisplayName="Delay 1s" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="1489,22" sap2010:WorkflowViewState.IdRef="Delay_7" />
+                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT'" sap:VirtualizedContainerService.HintSize="1489,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_FirstName+&quot; &quot;+in_LastName]">
                   <ui:TypeInto.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b73f5b69-6f3e-4198-9807-f9ce73af4fbd" InformativeScreenshot="a6b845fb4b87a4e21904f4739afaf593" Selector="&lt;webctrl id='search' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
                       <ui:Target.TimeoutMS>
@@ -281,13 +290,10 @@
                     </ui:Target>
                   </ui:TypeInto.Target>
                 </ui:TypeInto>
-                <Pick DisplayName="Pick( A Route  for Doctor Search)" sap:VirtualizedContainerService.HintSize="1084,918" sap2010:WorkflowViewState.IdRef="Pick_2">
-                  <PickBranch DisplayName="PickBranch-Search Results Present" sap:VirtualizedContainerService.HintSize="484,872" sap2010:WorkflowViewState.IdRef="PickBranch_3">
+                <Pick DisplayName="Pick( A Route  for Doctor Search)" sap:VirtualizedContainerService.HintSize="1489,1430" sap2010:WorkflowViewState.IdRef="Pick_2">
+                  <PickBranch DisplayName="PickBranch-Search Results Present" sap:VirtualizedContainerService.HintSize="889,1384" sap2010:WorkflowViewState.IdRef="PickBranch_3">
                     <PickBranch.Trigger>
-                      <ui:OnUiElementAppear Body="{x:Null}" ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="On Element Appear- Top Results" sap:VirtualizedContainerService.HintSize="434,192" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_3">
-                        <ui:OnUiElementAppear.RepeatForever>
-                          <Literal x:TypeArguments="x:Boolean" />
-                        </ui:OnUiElementAppear.RepeatForever>
+                      <ui:OnUiElementAppear Body="{x:Null}" ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="On Element Appear- Top Results" sap:VirtualizedContainerService.HintSize="434,191" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_3" RepeatForever="False">
                         <ui:OnUiElementAppear.Target>
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0adde035-4e2a-4441-8c1d-37855b8d2855" InformativeScreenshot="8be2aa9703d2cf15bdb5d45d9de80d26" Selector="&lt;webctrl isleaf='1' parentid='resultsTypeAheadResults' tag='DIV' innertext='*Top Search Results*' /&gt;" WaitForReady="COMPLETE">
                             <ui:Target.TimeoutMS>
@@ -297,25 +303,18 @@
                         </ui:OnUiElementAppear.Target>
                       </ui:OnUiElementAppear>
                     </PickBranch.Trigger>
-                    <Sequence DisplayName="Doctor Found" sap:VirtualizedContainerService.HintSize="376,298" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                    <Sequence DisplayName="Doctor Found" sap:VirtualizedContainerService.HintSize="839,995" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="varFirstListItem" />
+                      </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Select Doctor Name" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
-                        <ui:Click.CursorPosition>
-                          <ui:CursorPosition Position="Center">
-                            <ui:CursorPosition.OffsetX>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetX>
-                            <ui:CursorPosition.OffsetY>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetY>
-                          </ui:CursorPosition>
-                        </ui:Click.CursorPosition>
-                        <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ce17317-2e32-4b77-a959-162592be2dbb" InformativeScreenshot="3230e36e27e02d2df80963244a8df510" Selector="&lt;webctrl parentid='auto_0' tag='DIV' /&gt;">
+                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get the first appearing name in the drop down" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
+                        <ui:GetValue.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d079c010-7213-4bb6-8a4b-e70c5e4c0afb" InformativeScreenshot="c4d3544df97b67da0cd6aae5ebadf9c9" Selector="&lt;webctrl parentid='auto_0' tag='DIV' innertext='*' /&gt;">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
@@ -323,30 +322,105 @@
                               <InArgument x:TypeArguments="ui:WaitForReady" />
                             </ui:Target.WaitForReady>
                           </ui:Target>
-                        </ui:Click.Target>
-                      </ui:Click>
-                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_21">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:Boolean">[varDoctorFound]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                        </Assign.Value>
-                      </Assign>
+                        </ui:GetValue.Target>
+                        <ui:GetValue.Value>
+                          <OutArgument x:TypeArguments="x:String">[varFirstListItem]</OutArgument>
+                        </ui:GetValue.Value>
+                      </ui:GetValue>
+                      <If Condition="[varFirstListItem.ToLower.Contains(in_FirstName.ToLower) AND varFirstListItem.ToLower.Contains(in_LastName.ToLower)]" DisplayName="If(Doctor Found)" sap:VirtualizedContainerService.HintSize="797,757" sap2010:WorkflowViewState.IdRef="If_5">
+                        <If.Then>
+                          <Sequence DisplayName="Doctor Found" sap:VirtualizedContainerService.HintSize="376,298" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Select Doctor Name" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
+                              <ui:Click.CursorPosition>
+                                <ui:CursorPosition Position="Center">
+                                  <ui:CursorPosition.OffsetX>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetX>
+                                  <ui:CursorPosition.OffsetY>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetY>
+                                </ui:CursorPosition>
+                              </ui:Click.CursorPosition>
+                              <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ce17317-2e32-4b77-a959-162592be2dbb" InformativeScreenshot="3230e36e27e02d2df80963244a8df510" Selector="&lt;webctrl parentid='auto_0' tag='DIV' innertext='*' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:Click.Target>
+                            </ui:Click>
+                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[varDoctorFound]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Doctor Not Found" sap:VirtualizedContainerService.HintSize="376,610" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Doctor Name Not Found&quot;]" />
+                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[varDoctorFound]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign DisplayName="Assign Status" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">Failed</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign DisplayName="Assign Comment" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[out_Comment]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">["Doctor Name Not Found"]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-TakeScreenshot.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Path">["Error\UHCRest_DNF_"+in_FirstName+"_"+in_LastName+"_"+in_PostalCode+".jpeg"]</InArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
+                          </Sequence>
+                        </If.Else>
+                      </If>
                     </Sequence>
                   </PickBranch>
-                  <PickBranch DisplayName="PickBranch-Search Results Not Present " sap:VirtualizedContainerService.HintSize="426,872" sap2010:WorkflowViewState.IdRef="PickBranch_4">
+                  <PickBranch DisplayName="PickBranch-Search Results Not Present " sap:VirtualizedContainerService.HintSize="426,1384" sap2010:WorkflowViewState.IdRef="PickBranch_4">
                     <PickBranch.Trigger>
                       <Delay DisplayName="Delay 4s" Duration="00:00:04" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
                     </PickBranch.Trigger>
-                    <Sequence DisplayName="Doctor Not Found" sap:VirtualizedContainerService.HintSize="376,612" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                    <Sequence DisplayName="Doctor Not Found" sap:VirtualizedContainerService.HintSize="376,610" sap2010:WorkflowViewState.IdRef="Sequence_36">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Doctor Name Not Found&quot;]" />
-                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Doctor Name Not Found&quot;]" />
+                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_31">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Boolean">[varDoctorFound]</OutArgument>
                         </Assign.To>
@@ -354,7 +428,7 @@
                           <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign DisplayName="Assign Status" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                      <Assign DisplayName="Assign Status" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_32">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
                         </Assign.To>
@@ -362,7 +436,7 @@
                           <InArgument x:TypeArguments="x:String">Failed</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign DisplayName="Assign Comment" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+                      <Assign DisplayName="Assign Comment" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_33">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[out_Comment]</OutArgument>
                         </Assign.To>
@@ -370,11 +444,9 @@
                           <InArgument x:TypeArguments="x:String">["Doctor Name Not Found"]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-TakeScreenshot.xaml">
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-TakeScreenshot.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_Path">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Error\UHCRest_DNF_&quot;+in_FirstName+&quot;_&quot;+in_LastName+&quot;_&quot;+in_PostalCode+&quot;.jpeg&quot;" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Path">["Error\UHCRest_DNF_"+in_FirstName+"_"+in_LastName+"_"+in_PostalCode+".jpeg"]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
@@ -395,12 +467,12 @@
         <x:Reference>__ReferenceID2</x:Reference>
       </FlowStep.Next>
     </FlowStep>
-    <FlowDecision x:Name="__ReferenceID4" Condition="[varPostalCodeFound]" DisplayName="  PostalCodeFound ?  " sap:VirtualizedContainerService.HintSize="121,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2" True="{x:Reference __ReferenceID3}" False="{x:Reference __ReferenceID0}">
+    <FlowDecision x:Name="__ReferenceID4" Condition="[varPostalCodeFound]" DisplayName="  PostalCodeFound ?  " sap:VirtualizedContainerService.HintSize="120,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2" True="{x:Reference __ReferenceID3}" False="{x:Reference __ReferenceID0}">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <av:Point x:Key="ShapeLocation">240.641666666667,556.5</av:Point>
-          <av:Size x:Key="ShapeSize">121,87</av:Size>
+          <av:Size x:Key="ShapeSize">120,87</av:Size>
           <av:PointCollection x:Key="TrueConnector">240.641666666667,600 60,600 60,715.58 90,715.58</av:PointCollection>
           <av:PointCollection x:Key="FalseConnector">361.641666666667,600 450,600 450,946.04</av:PointCollection>
         </scg:Dictionary>
@@ -410,30 +482,31 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,445.58</av:Point>
-          <av:Size x:Key="ShapeSize">200,68</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,513.58 300,543.58 301.141666666667,543.58 301.141666666667,556.5</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,66</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,511.58 300,541.58 301.141666666667,541.58 301.141666666667,556.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Postal Code Selection" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_25">
+      <Sequence DisplayName="Postal Code Selection" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_25">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser UHC Rest HomeScreen" sap:VirtualizedContainerService.HintSize="510,1260" sap2010:WorkflowViewState.IdRef="BrowserScope_8" InformativeScreenshot="d10e082f36c8778132b6ca7a0fb05e55" Selector="&lt;html app='chrome.exe' title='*Find Care' /&gt;">
+        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser UHC Rest HomeScreen" sap:VirtualizedContainerService.HintSize="514,1145" sap2010:WorkflowViewState.IdRef="BrowserScope_8" InformativeScreenshot="d10e082f36c8778132b6ca7a0fb05e55" Selector="&lt;html app='chrome.exe' title='*Find Care' /&gt;">
           <ui:BrowserScope.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1114" sap2010:WorkflowViewState.IdRef="Sequence_32">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480,999" sap2010:WorkflowViewState.IdRef="Sequence_32">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Postal Code" sap:VirtualizedContainerService.HintSize="434,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[in_PostalCode]">
+                <Delay DisplayName="Delay 3s" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Postal Code" sap:VirtualizedContainerService.HintSize="438,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[in_PostalCode]">
                   <ui:TypeInto.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0092ccd0-16eb-43c8-87d4-28b66a2fb198" InformativeScreenshot="9f90fe61ad9ac6918ea851a77bc509b0" Selector="&lt;html app='chrome.exe' title='Medical | Find Care' /&gt;&lt;webctrl id='location' tag='INPUT' /&gt;">
                       <ui:Target.TimeoutMS>
@@ -445,7 +518,7 @@
                     </ui:Target>
                   </ui:TypeInto.Target>
                 </ui:TypeInto>
-                <TryCatch DisplayName="Click Postal Code" sap:VirtualizedContainerService.HintSize="434,848" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                <TryCatch DisplayName="Click Postal Code" sap:VirtualizedContainerService.HintSize="438,671" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -511,10 +584,10 @@
                     </Sequence>
                   </TryCatch.Try>
                   <TryCatch.Catches>
-                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,682" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -522,13 +595,13 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                         </ActivityAction.Argument>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376,612" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,610" sap2010:WorkflowViewState.IdRef="Sequence_31">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Postal Code not found&quot;]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Postal Code not found&quot;]" />
                           <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_18">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Boolean">[varPostalCodeFound]</OutArgument>
@@ -555,9 +628,7 @@
                           </Assign>
                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InsurancePlanExtraction-TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="InsurancePlanExtraction-TakeScreenshot.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_Path">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Error\UHCRest_PNF_&quot;+in_FirstName+&quot;_&quot;+in_LastName+&quot;_&quot;+in_PostalCode+&quot;.jpeg&quot;" />
-                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_Path">["Error\UHCRest_PNF_"+in_FirstName+"_"+in_LastName+"_"+in_PostalCode+".jpeg"]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                         </Sequence>
@@ -584,11 +655,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,119.58</av:Point>
-          <av:Size x:Key="ShapeSize">200,68</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,187.58 300,215.58</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,66</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,185.58 300,215.58</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Opening Website" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence DisplayName="Opening Website" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -648,23 +719,23 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,215.58</av:Point>
-              <av:Size x:Key="ShapeSize">200,68</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">300,283.58 300,316.5</av:PointCollection>
+              <av:Size x:Key="ShapeSize">200,66</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">300,281.58 300,311.58 298.5,311.58 298.5,316.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="State &amp; Year Selection" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_29">
+          <Sequence DisplayName="State &amp; Year Selection" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_29">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser UHC Rest HomeScreen" sap:VirtualizedContainerService.HintSize="873,1123" sap2010:WorkflowViewState.IdRef="BrowserScope_7" InformativeScreenshot="d10e082f36c8778132b6ca7a0fb05e55" Selector="&lt;html app='chrome.exe' title='*Guided Search | Find Care' /&gt;">
+            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser UHC Rest HomeScreen" sap:VirtualizedContainerService.HintSize="873,1121" sap2010:WorkflowViewState.IdRef="BrowserScope_7" InformativeScreenshot="d10e082f36c8778132b6ca7a0fb05e55" Selector="&lt;html app='chrome.exe' title='*Guided Search | Find Care' /&gt;">
               <ui:BrowserScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,977" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,975" sap2010:WorkflowViewState.IdRef="Sequence_28">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -690,7 +761,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:GetValue>
-                    <If Condition="[varAllStates.Contains(in_State)]" DisplayName="If(Check if state exists)" sap:VirtualizedContainerService.HintSize="797,739" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If Condition="[varAllStates.Contains(in_State)]" DisplayName="If(Check if state exists)" sap:VirtualizedContainerService.HintSize="797,737" sap2010:WorkflowViewState.IdRef="If_4">
                       <If.Then>
                         <Sequence DisplayName="State Found" sap:VirtualizedContainerService.HintSize="376,590" sap2010:WorkflowViewState.IdRef="Sequence_43">
                           <sap:WorkflowViewStateService.ViewState>
@@ -775,13 +846,13 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence DisplayName="State not found" sap:VirtualizedContainerService.HintSize="376,485" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                        <Sequence DisplayName="State not found" sap:VirtualizedContainerService.HintSize="376,483" sap2010:WorkflowViewState.IdRef="Sequence_44">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;State Not Found&quot;]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;State Not Found&quot;]" />
                           <Assign DisplayName="Assign status for state" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_27">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
@@ -821,25 +892,16 @@
             </ui:BrowserScope>
           </Sequence>
           <FlowStep.Next>
-            <FlowDecision x:Name="__ReferenceID7" DisplayName="    State Found ?   " sap:VirtualizedContainerService.HintSize="101,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
-              <FlowDecision.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="varStateFound" />
-              </FlowDecision.Condition>
+            <FlowDecision x:Name="__ReferenceID7" Condition="[varStateFound]" DisplayName="    State Found ?   " sap:VirtualizedContainerService.HintSize="98,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3" True="{x:Reference __ReferenceID5}" False="{x:Reference __ReferenceID0}">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <av:Point x:Key="ShapeLocation">249.5,316.5</av:Point>
-                  <av:Size x:Key="ShapeSize">101,87</av:Size>
+                  <av:Size x:Key="ShapeSize">98,87</av:Size>
                   <av:PointCollection x:Key="TrueConnector">249.5,360 170,360 170,479.58 200,479.58</av:PointCollection>
-                  <av:PointCollection x:Key="FalseConnector">350.5,360 450,360 450,946.04</av:PointCollection>
+                  <av:PointCollection x:Key="FalseConnector">347.5,360 450,360 450,946.04</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <FlowDecision.True>
-                <x:Reference>__ReferenceID5</x:Reference>
-              </FlowDecision.True>
-              <FlowDecision.False>
-                <x:Reference>__ReferenceID0</x:Reference>
-              </FlowDecision.False>
             </FlowDecision>
           </FlowStep.Next>
         </FlowStep>
