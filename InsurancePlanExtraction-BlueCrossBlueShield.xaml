@@ -10,10 +10,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1503,1339</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1503,1379</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>test_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="23">
+    <scg:List x:TypeArguments="x:String" Capacity="46">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -37,10 +37,15 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
       <x:String>UiPath.CV</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="46">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -64,6 +69,8 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="BlueCross Extracting Insurance Details" sap:VirtualizedContainerService.HintSize="1513,1174" sap2010:WorkflowViewState.IdRef="Sequence_54">
@@ -94,9 +101,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Flowchart.StartNode>
-        <x:Reference>__ReferenceID0</x:Reference>
+        <x:Reference>__ReferenceID6</x:Reference>
       </Flowchart.StartNode>
-      <FlowStep x:Name="__ReferenceID0">
+      <FlowStep x:Name="__ReferenceID6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">730,164</av:Point>
@@ -202,7 +209,7 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:OpenBrowser>
         <FlowStep.Next>
-          <FlowDecision x:Name="__ReferenceID2" Condition="[CaptchaExist]" DisplayName="Captcha Exists" sap:VirtualizedContainerService.HintSize="82,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+          <FlowDecision x:Name="__ReferenceID1" Condition="[CaptchaExist]" DisplayName="Captcha Exists" sap:VirtualizedContainerService.HintSize="82,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -210,11 +217,11 @@
                 <av:Point x:Key="ShapeLocation">789.5,286.5</av:Point>
                 <av:Size x:Key="ShapeSize">82,87</av:Size>
                 <av:PointCollection x:Key="TrueConnector">789.5,330 670,330</av:PointCollection>
-                <av:PointCollection x:Key="FalseConnector">870.5,330 1040,330</av:PointCollection>
+                <av:PointCollection x:Key="FalseConnector">871.5,330 901.5,330 901.5,326.5 1040,326.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <FlowDecision.True>
-              <FlowStep x:Name="__ReferenceID3">
+              <FlowStep x:Name="__ReferenceID2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">470,296</av:Point>
@@ -268,27 +275,26 @@
                   </ui:UiElementExists>
                 </Sequence>
                 <FlowStep.Next>
-                  <FlowDecision x:Name="__ReferenceID5" Condition="[PauseBot]" DisplayName="Pause Bot?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                  <FlowDecision x:Name="__ReferenceID4" Condition="[PauseBot]" DisplayName="Pause Bot?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         <av:Point x:Key="ShapeLocation">535,566.5</av:Point>
                         <av:Size x:Key="ShapeSize">70,87</av:Size>
-                        <av:PointCollection x:Key="FalseConnector">605,610 1010,610 1010,330 1040,330</av:PointCollection>
-                        <av:PointCollection x:Key="TrueConnector">535,610 380,610</av:PointCollection>
+                        <av:PointCollection x:Key="FalseConnector">605,610 1010,610 1010,326.5 1040,326.5</av:PointCollection>
+                        <av:PointCollection x:Key="TrueConnector">535,610 505,610 505,609 380,609</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <FlowDecision.True>
-                      <FlowStep x:Name="__ReferenceID6">
+                      <FlowStep x:Name="__ReferenceID5">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">180,576</av:Point>
                             <av:Size x:Key="ShapeSize">200,66</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">180,610 150,610 150,190 730,190</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Pausing Bot And restarting" sap:VirtualizedContainerService.HintSize="376,1298" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                        <Sequence DisplayName="Pausing Bot And restarting" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_60">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -355,25 +361,40 @@
                               </ui:Target>
                             </ui:CloseApplication.Target>
                           </ui:CloseApplication>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;Bot Going To Sleep&quot;]" />
-                          <Delay DisplayName="Delay 30 Mins" Duration="00:30:00" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Info" Message="[&quot;Restarting Process&quot;]" />
+                          <Throw Exception="[new Exception(&quot;Re-Captcha Occured !&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,376" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;Bot Going To Sleep&quot;]" />
+                                <Delay DisplayName="Delay 30 Mins" Duration="00:30:00" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Info" Message="[&quot;Restarting Process&quot;]" />
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:CommentOut>
                         </Sequence>
-                        <FlowStep.Next>
-                          <x:Reference>__ReferenceID0</x:Reference>
-                        </FlowStep.Next>
                       </FlowStep>
                     </FlowDecision.True>
                     <FlowDecision.False>
-                      <FlowStep x:Name="__ReferenceID1">
+                      <FlowStep x:Name="__ReferenceID0">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">1040,250</av:Point>
-                            <av:Size x:Key="ShapeSize">200,160</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">1140,410 1140,650</av:PointCollection>
+                            <av:Size x:Key="ShapeSize">200,153</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">1140,403 1140,650</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence sap2010:Annotation.AnnotationText="Initial Sequence before running the iteration. Must Place this sequence before starting the iteration process.  This runs once per Session." DisplayName="Initial Sequence" sap:VirtualizedContainerService.HintSize="200,160" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                        <Sequence sap2010:Annotation.AnnotationText="Initial Sequence before running the iteration. Must Place this sequence before starting the iteration process.  This runs once per Session." DisplayName="Initial Sequence" sap:VirtualizedContainerService.HintSize="200,153" sap2010:WorkflowViewState.IdRef="Sequence_62">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Default="85008" Name="staticPostal" />
                             <Variable x:TypeArguments="x:String" Default="I don't know" Name="requiredString" />
@@ -651,14 +672,14 @@
                           </ui:Click>
                         </Sequence>
                         <FlowStep.Next>
-                          <FlowStep x:Name="__ReferenceID4">
+                          <FlowStep x:Name="__ReferenceID3">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:Point x:Key="ShapeLocation">1040,650</av:Point>
-                                <av:Size x:Key="ShapeSize">200,160</av:Size>
+                                <av:Size x:Key="ShapeSize">200,153</av:Size>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence sap2010:Annotation.AnnotationText="This Sequence is for iterative process to extract Insurance details of all the input values. This [rocess runs as many times as the records." DisplayName="Repeated Process" sap:VirtualizedContainerService.HintSize="200,160" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                            <Sequence sap2010:Annotation.AnnotationText="This Sequence is for iterative process to extract Insurance details of all the input values. This [rocess runs as many times as the records." DisplayName="Repeated Process" sap:VirtualizedContainerService.HintSize="200,153" sap2010:WorkflowViewState.IdRef="Sequence_68">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:Boolean" Name="noDocFound" />
                               </Sequence.Variables>
@@ -1102,17 +1123,17 @@
               </FlowStep>
             </FlowDecision.True>
             <FlowDecision.False>
-              <x:Reference>__ReferenceID1</x:Reference>
+              <x:Reference>__ReferenceID0</x:Reference>
             </FlowDecision.False>
           </FlowDecision>
         </FlowStep.Next>
       </FlowStep>
-      <x:Reference>__ReferenceID2</x:Reference>
-      <x:Reference>__ReferenceID3</x:Reference>
       <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+      <x:Reference>__ReferenceID0</x:Reference>
+      <x:Reference>__ReferenceID3</x:Reference>
       <x:Reference>__ReferenceID4</x:Reference>
       <x:Reference>__ReferenceID5</x:Reference>
-      <x:Reference>__ReferenceID6</x:Reference>
     </Flowchart>
   </Sequence>
 </Activity>

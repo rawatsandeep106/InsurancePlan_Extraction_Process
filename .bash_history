@@ -267,3 +267,16 @@ git status
 git status
 clear
 exit
+git status
+git add -A
+git add -A
+git commit -m "Infinte Loop bug removed from HMA_VPN WF"
+git push origin master
+git status
+git status
+clear
+git push oringin master
+git push origin master
+git status
+clear
+exit
