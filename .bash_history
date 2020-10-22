@@ -280,3 +280,11 @@ git push origin master
 git status
 clear
 exit
+git status
+git add -A
+git commit -m "removed delay from Blue Cross"
+git status
+git push origin master
+git status
+clear
+exit

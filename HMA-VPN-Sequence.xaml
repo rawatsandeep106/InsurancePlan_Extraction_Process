@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="HMA_VPN_Sequence" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="862,841" sap2010:WorkflowViewState.IdRef="HMA_VPN_Sequence_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="HMA_VPN_Sequence" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="732,841" sap2010:WorkflowViewState.IdRef="HMA_VPN_Sequence_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
       <x:String>System.Activities</x:String>
@@ -162,7 +162,7 @@
                       <av:Size x:Key="ShapeSize">200,51</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="00:00:03">
+                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="418,463" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="10" RetryInterval="00:00:05">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
                         <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_2">
@@ -205,7 +205,7 @@
                       <ActivityFunc x:TypeArguments="x:Boolean">
                         <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists ON Button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                           <ui:UiElementExists.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ca0b7106-6f23-4dfb-a87f-8a4584b0ea72" InformativeScreenshot="8bfd150b897780c44eb8a43264775165" Selector="&lt;wnd app='vpn.exe' cls='AvastCefWindow' title='HMA VPN' /&gt;&lt;wnd cls='CefBrowserWindow' title='AvastChromiumWindow' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' /&gt;&lt;ctrl name='Avast' role='document' /&gt;&lt;ctrl name='ON*' role='push button' /&gt;" TimeoutMS="10000">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ca0b7106-6f23-4dfb-a87f-8a4584b0ea72" InformativeScreenshot="8bfd150b897780c44eb8a43264775165" Selector="&lt;wnd app='vpn.exe' cls='AvastCefWindow' title='HMA VPN' /&gt;&lt;wnd cls='CefBrowserWindow' title='AvastChromiumWindow' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' /&gt;&lt;ctrl name='Avast' role='document' /&gt;&lt;ctrl name='ON*' role='push button' /&gt;" TimeoutMS="15000">
                               <ui:Target.WaitForReady>
                                 <InArgument x:TypeArguments="ui:WaitForReady" />
                               </ui:Target.WaitForReady>
@@ -232,7 +232,7 @@
                   <av:Size x:Key="ShapeSize">200,66</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Already Running" sap:VirtualizedContainerService.HintSize="552,1263" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Already Running" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -275,7 +275,7 @@
                             </ui:Target>
                           </ui:Click.Target>
                         </ui:Click>
-                        <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="434,656" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                        <ui:InterruptibleDoWhile Condition="[(varNewIP is Nothing OR varNewIP = &quot;Obtaining...&quot; Or varNewIP = &quot;—&quot;) And varLoopCounter &lt;&gt;30]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="434,656" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
                           <ui:InterruptibleDoWhile.Body>
                             <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,491" sap2010:WorkflowViewState.IdRef="Sequence_5">
                               <sap:WorkflowViewStateService.ViewState>
@@ -315,9 +315,6 @@
                               <Delay DisplayName="Delay 1s" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
                             </Sequence>
                           </ui:InterruptibleDoWhile.Body>
-                          <ui:InterruptibleDoWhile.Condition>
-                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="(varNewIP is Nothing OR varNewIP = &quot;Obtaining...&quot; Or varNewIP = &quot;—&quot;) And varLoopCounter &lt;&gt;30" />
-                          </ui:InterruptibleDoWhile.Condition>
                         </ui:InterruptibleDoWhile>
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[varNewIP]" />
                       </Sequence>
