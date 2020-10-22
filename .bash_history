@@ -257,3 +257,13 @@ clear
 exit
 git staus
 git status
+git status
+git add -A
+git status
+git commit -m "IP Change Functionality Added"
+git push origin master
+git push origin master
+git status
+git status
+clear
+exit
