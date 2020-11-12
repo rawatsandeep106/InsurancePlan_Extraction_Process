@@ -288,3 +288,113 @@ git push origin master
 git status
 clear
 exit
+git status
+git add -A
+git add -A
+git commit -m "changed timeout and retries count in HMA WF"
+git statys
+git status
+git push origin master
+clear
+ext
+exit
+git status
+git add -A
+git status
+git status
+git commit -m "before Currency Issue fix"
+git push origin master
+git status
+git add -A
+git commit -m "Currency Issue fixed and Completion Date replaced with Deal_Date"
+git push origin master
+exit
+git status
+exit
+git status
+git remote -v
+git status
+git add -A
+git commit -m "Windows Generic Credential Functionality Added"
+git push origin master
+git init
+git status
+git add -A
+git status
+git commit -m "Initial Commit"
+git status
+git origin
+git add origin "https://github.com/rawatsandeep106/Morgon_Record_Process_Wave_2.git"
+git remote add origin "https://github.com/rawatsandeep106/Morgon_Record_Process_Wave_2.git"
+git remote
+git origin
+git rn origin
+git remote
+git remote origin
+git remote add "https://github.com/rawatsandeep106/Morgon_Record_Process_Wave_2.git"
+clear
+git remote
+git rm origin
+git rm remote
+git remote rm origin
+git remote
+git remote add origin "https://github.com/rawatsandeep106/Morgon_Record_Process_Wave_2.git"
+git push master origin
+git origin
+git remote
+origin
+git remote
+git remote -v
+git push
+git push origin master
+clear
+git status
+git status
+git add -A
+clear
+git starus
+git status
+git status
+git add -A
+git status
+git commit -m "Changes completed"
+git push origin master
+git stats
+git status
+git push
+git push
+git remote -v
+https://github.com/rawatsandeep106/Morgon_Record_Process_Wave_2.git (fetchclear
+git status
+git status
+clear
+git status
+git add -A
+clear
+git status
+clear
+git commit -m "Excel Activities Replaced with csv"
+git push origin master
+git status
+git push
+git push origin master
+clear
+logout
+git status
+git add -A
+git commit -m "Removed (Inactive) String from pdf names & Removed char S from Medical Recods"
+git push origin master
+git status
+git remote -v
+git status
+git add -A
+git commit -m "Powerchell script has been removed for zipping"
+git push origin master
+git status
+git add -A
+git commit -m "changes in projectsetting.json"
+git status
+git push origin master
+git status
+git push origin master
+exit

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="HMA_VPN_Sequence" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="732,841" sap2010:WorkflowViewState.IdRef="HMA_VPN_Sequence_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="HMA_VPN_Sequence" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="845,841" sap2010:WorkflowViewState.IdRef="HMA_VPN_Sequence_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
       <x:String>System.Activities</x:String>
@@ -162,7 +162,7 @@
                       <av:Size x:Key="ShapeSize">200,51</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="418,463" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="10" RetryInterval="00:00:05">
+                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="10" RetryInterval="00:00:05">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
                         <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_2">
@@ -265,7 +265,7 @@
                             </ui:CursorPosition>
                           </ui:Click.CursorPosition>
                           <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a2104e4f-efc4-4821-8aa8-cfad54d43362" InformativeScreenshot="201080cd6024320c2d575f36c5700132" Selector="&lt;wnd cls='CefBrowserWindow' title='AvastChromiumWindow' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' /&gt;&lt;ctrl name='Avast' role='document' /&gt;&lt;ctrl name='' role='push button' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a2104e4f-efc4-4821-8aa8-cfad54d43362" InformativeScreenshot="201080cd6024320c2d575f36c5700132" Selector="&lt;wnd cls='CefBrowserWindow' title='AvastChromiumWindow' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' /&gt;&lt;ctrl role='document' /&gt;&lt;ctrl role='push button' idx='7' /&gt;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -285,7 +285,7 @@
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get New IP" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
                                 <ui:GetValue.Target>
-                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fb1e69f7-8911-48b3-bb6c-e20dd1963934" InformativeScreenshot="8dd135781aca7fff14c7c7b0c6775d20" Selector="&lt;wnd cls='CefBrowserWindow' title='AvastChromiumWindow' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' /&gt;&lt;ctrl name='Avast' role='document' /&gt;&lt;ctrl idx='26' role='DIV' /&gt;">
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fb1e69f7-8911-48b3-bb6c-e20dd1963934" InformativeScreenshot="8dd135781aca7fff14c7c7b0c6775d20" Selector="&lt;wnd cls='CefBrowserWindow' title='AvastChromiumWindow' /&gt;&lt;wnd cls='Chrome_WidgetWin_0' /&gt;&lt;ctrl role='document' /&gt;&lt;ctrl role='DIV' idx='17' /&gt;">
                                     <ui:Target.TimeoutMS>
                                       <InArgument x:TypeArguments="x:Int32" />
                                     </ui:Target.TimeoutMS>
