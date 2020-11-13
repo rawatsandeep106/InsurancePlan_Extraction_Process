@@ -398,3 +398,33 @@ git push origin master
 git status
 git push origin master
 exit
+git status
+git add -A
+git ad -A
+git add -A
+git add -a
+git add -A
+git status
+git add -A
+git commit -m "MachineID added to error email, HMA is now work for Anthem and BCBS, HMA selector issue fixed"
+git push origin master
+git push origin master
+clear
+git status
+git add -A
+git commit "Now it does not require excel to be installed, fil[3~e already exit error fixed"
+git commit -m "Now it does not require excel to be installed, file already exit error fixed"
+"Now it does not require excel to be installed, file already exit error fixed"
+Now it does not require excel to be installed, file already exit error fixed
+git commit -m "Now it does not require excel to be installed, file already exit error fixed, logout selectors fixed"
+git status
+git push origin master
+git status
+git add -A
+git commit -m "Error folder creation functionality added"
+git push origin master
+git push
+git push origin master
+git status
+clease
+logout
