@@ -440,3 +440,11 @@ git status
 git push origin master
 git status
 exit
+git status
+git add -A
+git commit -m "Static Path issue fixed in ResumingRow WF"
+git status
+git push origin master
+git push
+clear
+exit
