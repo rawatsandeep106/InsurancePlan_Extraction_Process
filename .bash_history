@@ -448,3 +448,12 @@ git push origin master
 git push
 clear
 exit
+git status
+git add -A
+git commit - "Static path issue fixed in Browsing History cleanup"
+git commit -m "Static path issue fixed in Browsing Histoty cleaup WF"
+git status
+git push origin master
+git push
+clear
+exit
