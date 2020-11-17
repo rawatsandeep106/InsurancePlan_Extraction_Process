@@ -428,3 +428,8 @@ git push origin master
 git status
 clease
 logout
+git add -A
+git commit -m "Resume Functionality Added"
+git status
+git push origin master
+exit
