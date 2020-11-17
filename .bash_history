@@ -433,3 +433,10 @@ git commit -m "Resume Functionality Added"
 git status
 git push origin master
 exit
+git status
+git add -A
+git commit -m "replaced Excel Scope with Workbook activities for excel dependency removal, Resume functionality Added, Aetana Title Selector Issue Fixed, Browsing History Cleanup WF Added"
+git status
+git push origin master
+git status
+exit

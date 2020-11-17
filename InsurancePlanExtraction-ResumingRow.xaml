@@ -85,7 +85,7 @@
         <OutArgument x:TypeArguments="si:FileInfo[]">[varFileInfoObjs]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="si:FileInfo[]">[new System.IO.DirectoryInfo("C:\Users\User\Desktop\Damco RPA Projects\InsurancePlan Extraction Process\Output").GetFiles("InsurancePlan Extraction Output*")]</InArgument>
+        <InArgument x:TypeArguments="si:FileInfo[]">[new System.IO.DirectoryInfo("Output").GetFiles("InsurancePlan Extraction Output*")]</InArgument>
       </Assign.Value>
     </Assign>
     <If Condition="[varFileInfoObjs.Count = 0]" DisplayName="If(Output file present)" sap:VirtualizedContainerService.HintSize="1310,1057" sap2010:WorkflowViewState.IdRef="If_1">
