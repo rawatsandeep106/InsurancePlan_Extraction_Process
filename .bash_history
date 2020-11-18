@@ -457,3 +457,16 @@ git push origin master
 git push
 clear
 exit
+git status
+git add -A
+git commit -m "misouri pop up issue fix & custom error message for incorrect header placing in input file"
+git status
+git push origin master
+git push
+clear
+logout
+git status
+git add -A
+git commit -m "login selector issue fixed"
+git commit
+git push origin master
